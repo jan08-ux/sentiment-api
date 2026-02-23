@@ -9,8 +9,11 @@ app = FastAPI()
 
 # 2. Initialize the OpenAI Client
 # This automatically looks for an environment variable named OPENAI_API_KEY on your computer
-client = OpenAI()
-
+# Change this part in your code
+client = OpenAI(
+    api_key=os.environ.get("OPENAI_API_KEY"),
+    base_url="https://aipipe.org/openai/v1"  # <--- ADD THIS LINE
+)
 # 3. Define the Input Format
 # We tell FastAPI to expect a JSON payload with exactly one string named "comment"
 class CommentRequest(BaseModel):
