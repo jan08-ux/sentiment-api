@@ -55,4 +55,4 @@ def analyze_comment(request: CommentRequest):
         
     except Exception as e:
         # If anything goes wrong (like a bad API key), return a graceful 500 error
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) 
